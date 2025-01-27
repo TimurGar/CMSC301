@@ -1,0 +1,36 @@
+
+'''
+Given the non-negative integers a, b, c, and d, set e to the first number in range(a, b) 
+that is divisible by both c and d. If no number in the range is divisible by both, set e to b+1.
+Example inputs and outputs:
+'''
+
+a = 0
+b = 0
+c = 0
+d = 0
+e = 0
+
+
+def Problem2(a, b, c, d):
+    e = 0
+    i = a
+    while i < b:
+        t2 = i % c
+        t3 = i % d
+        if t2 == 0:
+            if t3 == 0:
+                e = i
+                return e
+        i += 1
+
+    e = b + 1
+
+    return e
+
+e = Problem2(0,100,2,5)
+print(e)
+e = Problem2(1,100,2,5)
+print(e)
+e = Problem2(2,3,2,5)
+print(e)
